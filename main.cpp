@@ -20,6 +20,23 @@ void mouse(int button, int state, int x, int y){
  //um estado do botão (state) e a posição de tela (x,y) que foi clicada.
  //Não é coordenada do OpenGL, portanto, devemos converter o
  //clique de tela em coordenada do OpenGL. Dica: y é invertido.
+ 
+ // width é a largura da janela em pixels (ver glViewport)
+ float xx = x / (float) width; // normaliza click: xx = [0..1)
+ // transformar xx em coordenadas da janela OpenGL:
+ // xi é a coordenada inicial da janela e w = xf - xi (largura da janela)
+ // Veja as definições de janela no comando glOrtho
+ xx = xi + xx * w; // xx está em coordenadas do OpenGL (xx=[xi..xf));
+ // para o y temos que considerar que o sistema OpenGL o y cresce para cima
+ // e no da tela (que veio o click) o y cresce para baixo. Então, devemos
+ // primeiro inverter o y e depois convertê-lo para janela OpenGL
+ // height é a altura da janela em pixels (ver glViewport)
+ y = height - y;
+ float yy = y / (float) height; // normaliza click: yy = [0..1)
+ // transformar xx em coordenadas da janela OpenGL:
+ // xi é a coordenada inicial da janela e h = yf - yi (altura da janela)
+ // Veja as definições de janela no comando glOrtho
+ yy = yi + yy * h; // yy está em coordenadas do OpenGL (yy=[yi..yf));
 }
 void keyboard(unsigned char key, int x, int y){
  //faz alguma coisa dado que alguma tecla (key) foi pressionada,
