@@ -14,6 +14,24 @@ void keyboard(unsigned char key, int x, int y) {
 		var = key;
 	}
 
+void display(void){
+	glClear(GL_COLOR_BUFFER_BIT);
+ 	//... outras definições
+ 	float xx;
+ 	float yy = yi; // y inicial da tela
+ 	glBegin(GL_QUADS);
+ 	for (int y=0; y < rows; y++) {
+ 	xx = xi; // x inicial da tela
+ 	for (int x = 0; x < cols; x++) {
+ 	// definir qual é cor (r,g,b)...
+ 	drawRect(xx, yy, w, h, r,g,b); // w e h são as dimensões do retângulo
+ 	xx += w; // xx de base para o primeiro vértice do próximo retângulo
+ 	}
+ 	yy += h; // yy de base para o primeiro vértice do próximo retângulo
+	 }
+    glEnd();
+    glFlush(); // ou glutSwapBuffers();
+ }
 
 	void init(void){
 		glClearColor(0.00, 0.0, 30.0, 0.0);
