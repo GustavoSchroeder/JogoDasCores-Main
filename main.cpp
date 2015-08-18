@@ -22,6 +22,18 @@ void drawRect(float x, float y, float weight, float height, float r, float g, fl
   glVertex2d(x + weight, y); // Linha 4
 }
 
+/*
+float drawText(char *msg, int msgLength, float x, float y, float charWidth){
+ for (int i = 0; i < msgLength; i++) {
+ glRasterPos2d(x, y);
+ // A fonte, neste caso, é uma constante da GLUT. Que pode ser um param
+ glutBitmapCharacter(GLUT_BITMAP_9_BY_15, *(msg++)); // inc ponteiro msg
+ x += charWidth;
+ }
+ return x;
+}
+*/
+
 void display(void){
 	glClear(GL_COLOR_BUFFER_BIT);
  	//... outras definições
