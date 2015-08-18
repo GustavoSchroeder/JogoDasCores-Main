@@ -13,6 +13,14 @@ void keyboard(unsigned char key, int x, int y) {
 		}
 		var = key;
 	}
+	
+void drawRect(float x, float y, float weight, float height, float r, float g, float b){
+  glColor(r, g, b);
+  glVertex2d(x, y); // Linha 1
+  glVertex2d(x, y + height); // Linha 2
+  glVertex2d(x + weight, y + height);// Linha 3
+  glVertex2d(x + weight, y); // Linha 4
+}
 
 void display(void){
 	glClear(GL_COLOR_BUFFER_BIT);
