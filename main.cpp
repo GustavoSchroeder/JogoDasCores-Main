@@ -7,19 +7,31 @@
 
 using namespace std; //para dizer que não precisa colocar namespace na frente do objeto criado por ela
 
-void keyboard(unsigned char key, int x, int y) {
-		if (key == 'q') {
-			exit(0);
-		}
-		var = key;
-	}
-	
 void drawRect(float x, float y, float weight, float height, float r, float g, float b){
   glColor(r, g, b);
   glVertex2d(x, y); // Linha 1
   glVertex2d(x, y + height); // Linha 2
   glVertex2d(x + weight, y + height);// Linha 3
   glVertex2d(x + weight, y); // Linha 4
+}
+
+void mouse(int button, int state, int x, int y){
+ //faz alguma coisa dado que algum botão (button) foi pressionado,
+ //um estado do botão (state) e a posição de tela (x,y) que foi clicada.
+ //Não é coordenada do OpenGL, portanto, devemos converter o
+ //clique de tela em coordenada do OpenGL. Dica: y é invertido.
+}
+void keyboard(unsigned char key, int x, int y){
+ //faz alguma coisa dado que alguma tecla (key) foi pressionada,
+ //e a posição de tela atual (x,y) do mouse.
+ //Não é coordenada do OpenGL, portanto, devemos converter o
+ //clique de tela em coordenada do OpenGL. Dica: y é invertido.
+}
+void reshape(int w, int h) {
+ // redefinição da viewport e de proporções da tela, quando o usuário
+ // aumenta ou diminui a tela do programa.
+ // w e h são as novas dimensões da janela
+ glViewport (0, 0, width=w, height=h);
 }
 
 /*
