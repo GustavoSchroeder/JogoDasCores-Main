@@ -12,9 +12,9 @@ int colors[32][32];
 
 
 void retangulo(boolean visibilidade, int x, int y) {
-	boolean visivel = visibilidade;
-	int posX = x;
-	int posY = y;
+	boolean visivel = visibilidade; //Visivel ou nao
+	int posX = x; //posicao no array
+	int posY = y; //posicao no array
 }
 
 void desenhaRetangulo(float x, float y, float weight, float height, float r, float g, float b, boolean visibilidade, int posx, int posy) {
@@ -27,7 +27,7 @@ void desenhaRetangulo(float x, float y, float weight, float height, float r, flo
 }
 
 void drawRect(float x, float y, float weight, float height, float r, float g, float b) {
-	desenhaRetangulo(x, y, weight, height, r, g, b, true, 1,1);
+	desenhaRetangulo(x, y, weight, height, r, g, b, true, 1,1); //apenas teste
 }
 /*
 void mouse(int button, int state, int x, int y) {
